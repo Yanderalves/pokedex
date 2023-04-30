@@ -8,12 +8,16 @@
 .content {
   padding: 1rem;
   width: 100%;
-  max-width: 700px;
+  max-width: 500px;
   margin: 0 auto;
 }
 
 .content h1 {
   margin: 0;
+}
+
+.name{
+  text-transform: uppercase;
 }
 
 .pokemons {
@@ -25,25 +29,33 @@
 .pokemon {
   margin: .5rem;
   padding: 1rem;
-  background-color: #14a06f;
+  backdrop-filter: grayscale(100%);
   color: white;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
 }
 
-.image {
-  width: 110px;
-  width: 110px;
-  object-fit: cover;
+.pokemon:hover .image{
+  filter: none;
+  transform: scale(1.05);
 }
+
+.image {
+  width: 160px;
+  width: 160px;
+  object-fit: cover;
+  filter: grayscale(1);
+  transition: 0.3s all;
+}
+
+
 
 .pokemon .number {
   text-align: right;
   color: black;
   font-weight: bold;
-  font-size: .640rem;
-  opacity: .5;
+  font-size: .800rem;
 }
 
 
@@ -51,13 +63,25 @@
   list-style: none;
 }
 
+.pokemon .details .types .type:first-of-type{
+  filter: saturate(2);
+}
+
 .pokemon .details .types .type {
-  background-color: #61e1ca;
   color: #fff;
   padding: .25rem .5rem;
   margin: .25rem 0rem;
   border-radius: 1rem;
-  font-size: 0.625rem;
+  font-size: 0.800rem;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.pokemon .details .types .type img{
+  width: 20px;
+  filter: brightness(100);
 }
 
 
