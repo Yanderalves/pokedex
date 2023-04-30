@@ -1,38 +1,141 @@
-.App {
-  text-align: center;
+* {
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.content {
+  padding: 1rem;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.content h1 {
+  margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.pokemons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pokemon {
+  margin: .5rem;
+  padding: 1rem;
+  background-color: #14a06f;
+  color: white;
+  border-radius: 1rem;
   display: flex;
   flex-direction: column;
+}
+
+.image {
+  width: 110px;
+  width: 110px;
+  object-fit: cover;
+}
+
+.pokemon .number {
+  text-align: right;
+  color: black;
+  font-weight: bold;
+  font-size: .640rem;
+  opacity: .5;
+}
+
+
+.pokemon .details .types {
+  list-style: none;
+}
+
+.pokemon .details .types .type {
+  background-color: #61e1ca;
+  color: #fff;
+  padding: .25rem .5rem;
+  margin: .25rem 0rem;
+  border-radius: 1rem;
+  font-size: 0.625rem;
+}
+
+
+.details {
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+.colour-normal {
+  background-color: #A8A77A;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.colour-fire {
+  background-color: #EE8130;
+}
+
+.colour-water {
+  background-color: #6390F0;
+}
+
+.colour-electric {
+  background-color: #F7D02C;
+}
+
+.colour-grass {
+  background-color: #7AC74C;
+}
+
+.colour-ice {
+  background-color: #96D9D6;
+}
+
+.colour-fighting {
+  background-color: #C22E28;
+}
+
+.colour-poison {
+  background-color: #A33EA1;
+}
+
+.colour-ground {
+  background-color: #E2BF65;
+}
+
+.colour-flying {
+  background-color: #A98FF3;
+}
+
+.colour-psychic {
+  background-color: #F95587;
+}
+
+.colour-bug {
+  background-color: #A6B91A;
+}
+
+.colour-rock {
+  background-color: #B6A136;
+}
+
+.colour-ghost {
+  background-color: #735797;
+}
+
+.colour-dragon {
+  background-color: #6F35FC;
+}
+
+.colour-dark {
+  background-color: #705746;
+}
+
+.colour-steel {
+  background-color: #B7B7CE;
+}
+
+.colour-fairy {
+  background-color: #D685AD;
 }
