@@ -1,14 +1,18 @@
 * {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
-.content {
-  padding: 1rem;
+.content{
+  display: flex;
+  flex-direction: column;
+  max-width: 1240px;
   width: 100%;
-  max-width: 500px;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
 }
 
@@ -16,30 +20,69 @@
   margin: 0;
 }
 
+.content .head-page{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content .head-page .search{
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.content .head-page input{
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
 .name{
   text-transform: uppercase;
 }
 
-.pokemons {
+.pokemons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   list-style: none;
-  padding: 0;
-  margin: 0;
+  margin: 15px 0;
+  gap: 15px;
 }
 
-.pokemon {
-  margin: .5rem;
-  padding: 1rem;
-  backdrop-filter: grayscale(100%);
-  color: white;
-  border-radius: 1rem;
+.pokemon{
   display: flex;
+  width: calc((100% / 3) - 15px);
   flex-direction: column;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.container-image{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("/assets/patterns/pokeball.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 200px;
+  transition: all .5s;
 }
 
 .pokemon:hover .image{
   filter: none;
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
+
+/* .pokemon:hover .container-image {
+  filter: none;
+  transform: rotate(360deg);
+} */
 
 .image {
   width: 160px;
@@ -48,7 +91,6 @@
   filter: grayscale(1);
   transition: 0.3s all;
 }
-
 
 
 .pokemon .number {
@@ -90,6 +132,16 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+
+.button-more{
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+  margin: 0 auto;
+  width: 100%;
+  border: none;
+  padding: 10px;
 }
 
 .colour-normal {

@@ -16,9 +16,11 @@ export default function Pokemon(props){
                             {type.type.name}
                          </li>)}
                 </ul>
-                <img className="image"
-                    src={props.image}
-                    alt=""></img>
+                <div className="container-image">
+                    <img className="image"
+                        src={props.image}
+                        alt=""></img>
+                </div>
             </div>
         </li>
     )
