@@ -1,10 +1,11 @@
 * {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Press Start 2P', cursive;
   font-weight: bold;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
+
 
 .content{
   display: flex;
@@ -13,11 +14,11 @@
   width: 100%;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 15px auto;
 }
 
-.content h1 {
-  margin: 0;
+.content .title-page{
+  width: 200px;
 }
 
 .content .head-page{
@@ -25,6 +26,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 15px;
 }
 
 .content .head-page .search{
@@ -50,6 +52,7 @@
   align-items: center;
   flex-wrap: wrap;
   list-style: none;
+  padding: 10px;
   margin: 15px 0;
   gap: 15px;
 }
@@ -60,6 +63,7 @@
   flex-direction: column;
   padding: 10px;
   border-radius: 10px;
+  color: white;
 }
 
 .container-image{
@@ -114,7 +118,7 @@
   padding: .25rem .5rem;
   margin: .25rem 0rem;
   border-radius: 1rem;
-  font-size: 0.800rem;
+  font-size: 0.700rem;
   text-transform: uppercase;
   display: flex;
   align-items: center;
@@ -135,14 +139,26 @@
 }
 
 .button-more{
-  background-color: red;
-  color: white;
+  background-color: #396bba;
+  color: #ffe031;
   border-radius: 10px;
   margin: 0 auto;
   width: 100%;
   border: none;
   padding: 10px;
 }
+
+@media screen and (max-width: 768px) {
+  .pokemon{
+    width: 100%;
+  }
+
+    .content .head-page .search {
+      width: 95 %;
+    }
+}
+
+
 
 .colour-normal {
   background-color: #A8A77A;
