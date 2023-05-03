@@ -1,32 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import api from "../../services/api";
 
-export default function PokemonDetails(props) {
+const path = '/assets/types/';
 
-    console.log(props.key)
+export default function PokemonDetails() {
+
+    const {name} = useParams();
+    const [pokemon, setPokemon] = useState({});
+
+    useEffect(() => {
+        api
+            .get(`/pokemon/${name}`)
+            .then(response => response.data)
+            .then(data => {
+
+                const mapperPokemon =  {
+                    name: data.name,
+                    id: data.id,
+                    image: data.sprites.other['official-artwork'].front_default || pokemon.sprites.front_default,
+                    types: data.types
+                }
+                setPokemon(mapperPokemon)
+            })
+    }, [name]);
+
+    console.log(pokemon);
+             
     return(
-        <>
-            <div class="details-head">
-                <h2>{props.name}</h2>
-                <span className="number"># {props.id}</span>
-            </div>
-            <div className="details-body">
-                <ul className="types">
-                    {props.types.map(type =>
-                        <li className={`type colour-${type.type.name}`}>
-                            <img src={`${path}${type.type.name}.svg`}></img>
-                            {type.type.name}
-                        </li>)}
-                </ul>
-                <div className="about">
-                    <div className="weight"></div>
-                    <div className="height"></div>
-                    <div className="moves"></div>
-                </div>
-                <div className="stats">
+        <> 
+            <div className="container">
+                <div className="row">
                     
                 </div>
             </div>
-
         </>
     )
 }

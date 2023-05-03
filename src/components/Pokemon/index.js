@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const path = '/assets/types/';
 
@@ -6,7 +7,7 @@ export default function Pokemon(props){
     const typePrimary = props.pokemon.types[0].type.name;
     
     return(
-        <li className={`pokemon colour-${typePrimary}`}>
+        <Link to={`/pokemon/${props.pokemon.name}`} className={`pokemon colour-${typePrimary}`}>
             <span className="number"># {props.pokemon.id}</span>
             <span className="name">{props.pokemon.name}</span>
             <div className="details">
@@ -23,6 +24,6 @@ export default function Pokemon(props){
                         alt=""></img>
                 </div>
             </div>
-        </li>
+        </Link>
     )
 }

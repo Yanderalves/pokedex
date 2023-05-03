@@ -3,6 +3,7 @@ import api from "./services/api";
 import Pokemon from "./components/Pokemon";
 import axios from "axios";
 import './App.css'
+import { Link } from "react-router-dom";
 
 export default function App() {
   const [endpoints, setEndpoints] = useState([]);
@@ -68,7 +69,7 @@ export default function App() {
       </div>
       <ul className="pokemons">
         {pokemonsFiltered.slice(0, displayCount).map((pokemon) => (
-          < Pokemon key = { pokemon.id } pokemon = {mapperPokemon(pokemon)} />
+         < Pokemon key = { pokemon.id } pokemon = {mapperPokemon(pokemon)} />
         ))}
       </ul>
       {displayCount < pokemonsFiltered.length &&
