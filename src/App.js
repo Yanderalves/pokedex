@@ -37,7 +37,7 @@ export default function App() {
 
   useEffect(() => {
     setPokemonsFiltered(pokemons.filter(pokemon => pokemon.name.includes(search)));
-  }, [search, pokemonsFiltered])
+  }, [search, pokemons])
 
   const onChangeValue = (e) => {
     setSearch(e.target.value.toLowerCase().trim());
@@ -47,10 +47,19 @@ export default function App() {
     setDisplayCount(displayCount + 21);
   }
 
+  const mapperPokemon = (pokemon) => {
+    return{
+      name:  pokemon.name,
+      id: pokemon.id,
+      image: pokemon.sprites.other.dream_world.front_default,
+      types: pokemon.types,
+    }
+  }
+
   return (
     <section className="content">
       <div className="head-page">
-        <h1>Pokedex</h1>
+        <img className="page-title" src="/assets/patterns/pokedex-title.png"></img>
         <div className="search">
           <input type="text" placeholder="Por qual Pokemon você está procurando?" onChange={onChangeValue} />
           <button className="button-search">
