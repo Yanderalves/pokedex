@@ -13,7 +13,7 @@ export default function Pokemon(props) {
                 <ul className="types">
                     {props.pokemon.types.map(type =>
                         <li className={`type colour-${type.type.name}`}>
-                            <img src={`${path}${type.type.name}.svg`}></img>
+                            <img alt={type.type.name} src={`${path}${type.type.name}.svg`}></img>
                             {type.type.name}
                         </li>)}
                 </ul>

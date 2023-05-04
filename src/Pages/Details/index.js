@@ -5,8 +5,7 @@ import { GiWeight } from "react-icons/gi";
 import { CiLineHeight } from "react-icons/ci";
 import { BiArrowBack } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import ProgressBar from "react-bootstrap/ProgressBar";
-
+ 
 import "./style.css";
 import "../../colors.css";
 import "../../App.css";
@@ -68,13 +67,13 @@ export default function Details() {
                     </span>
                 </div>
                 <div className="container-image-details">
-                    <img className="pokemon-image" src={pokemon.image} alt=""/>
+                    <img alt="pokemonImage" className="pokemon-image" src={pokemon.image} />
                 </div>
             </div>
             <div className="details-body">
                 <ul className="pokemon-types">
                     {pokemon.types ? pokemon.types.map((type) =>
-                        <li className={`type colour-${type.type.name}`} key={type.type.name}> <img src={`${path}${type.type.name}.svg`}></img>{type.type.name}</li>) : null}
+                        <li className={`type colour-${type.type.name}`} key={type.type.name}> <img alt="typeImage" src={`${path}${type.type.name}.svg`}></img>{type.type.name}</li>) : null}
                 </ul>
                 <div className="pokemon-about">
                     <div className="container-infos">

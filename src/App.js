@@ -52,18 +52,23 @@ export default function App() {
   return (
     <section className="content">
       <div className="head-page">
-        <img className="page-title" src="/assets/patterns/pokedex-title.png"></img>
+        <img alt="pokedex-title" className="page-title" src="/assets/patterns/pokedex-title.png"></img>
         <div className="search">
           <input type="text" placeholder="FAAAAAAAAAAAAAAALA ZEZE" onChange={(e => setSearch(e.target.value.toLowerCase().trim()))} />
           <button className="button-search">
           </button>
         </div>
       </div>
-      <ul className="pokemons"  >
+      {pokemonsFiltered &&  pokemonsFiltered.length > 0 ? <ul className="pokemons"  >
         {pokemonsFiltered.slice(0, displayCount).map((pokemon) => (
           < Pokemon key={pokemon.id} pokemon={mapperPokemon(pokemon)} />
         ))}
-      </ul>
+      </ul> : 
+      <div className="loading">
+        <img alt="pikachu-running" src="/assets/patterns/pikachu-running.gif" className="empty-list" />
+        <p>Loading...</p>
+      </div> }
+      
       {displayCount < pokemonsFiltered.length &&
         <button className="button-more" onClick={(e) => setDisplayCount(displayCount + 21)}>Mostrar mais</button>
       }

@@ -73,10 +73,9 @@ a, a:visited{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("/public/assets/patterns/pokeball.svg");
+  background-image: url("/assets/patterns/pokeball.svg");
   background-size: cover;
   background-repeat: no-repeat;
-  width: 200px;
   transition: all .5s;
 }
 
@@ -148,6 +147,26 @@ a, a:visited{
   padding: 10px;
 }
 
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.loading img {
+  width: 150px;
+}
+
+.loading p {
+  background-color: #396bba;
+  color: #ffe031;
+  border-radius: 5px;
+  padding: 10px;
+}
+
 @media screen and (max-width: 970px) {
   .pokemon {
     width: calc((100% / 2) - 10px );
@@ -157,6 +176,5 @@ a, a:visited{
 @media screen and (max-width: 768px) {
   .pokemon{
     width: 100%;
-  }
-  
+  }  
 }

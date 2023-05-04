@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 500px;
+    max-width: 470px;
     width: 100%;
     margin: 0 auto;
     border-radius: 10px;
@@ -46,7 +46,6 @@
     gap: 15px;
     align-items: center;
     box-shadow: -1px 1px 13px 0px black;
-    height: 60vh;
     border-radius: 10px;
     padding: 10px 0px 25px 0;
 }
@@ -78,15 +77,22 @@
     filter: brightness(100);
 }
 
-.pokemon-about{
-    display: flex;
-}
 
 .pokemon-info{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
+}
+
+.pokemon-info p{
+    font-size: 12px;
+}
+
+.pokemon-info > div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .border-line{
@@ -107,6 +113,7 @@
 }
 
 .description{
+    font-size: 13px;
     text-align: center;
 }
 
@@ -116,6 +123,10 @@
     align-items: center;
     justify-content: center;
     margin-top: 15px;
+}
+
+.stats h2{
+    font-size: 15px;
 }
 
 .pokemon-stats{
@@ -149,7 +160,7 @@
 }
 
 .pokemon-stats .pokemon-stat .bar, .container-bar{
-    width: 250px;
+    width: 10rem;
     display: block;
     height: 5px;
     background-color: black;
