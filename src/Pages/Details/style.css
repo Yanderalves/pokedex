@@ -1,10 +1,14 @@
+body{
+    overflow: hidden;
+}
+
 .pokemon-details{
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 470px;
     width: 100%;
-    margin: 0 auto;
+    margin: 10px auto;
     border-radius: 10px;
     height: 100vh;
 }
@@ -141,7 +145,7 @@
 }
 
 .pokemon-stats span:nth-child(2){
-    width: 30px;
+    width: 20px;
 }
 
 .pokemon-stats .pokemon-stat{
@@ -155,12 +159,12 @@
 }
 
 .pokemon-stats .pokemon-stat span:first-of-type{
-    width: 80px;
+    width: 57px;
     border-right: 1px solid rgba(0, 0, 0, 0.444);
 }
 
 .pokemon-stats .pokemon-stat .bar, .container-bar{
-    width: 10rem;
+    width: 14rem;
     display: block;
     height: 5px;
     background-color: black;
