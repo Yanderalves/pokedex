@@ -18,6 +18,16 @@ Para executar, execute os seguintes comenados na pasta do projeto
 - Exibição de informações detalhadas sobre cada pokémon, como tipo, habilidades, estatísticas de combate, entre outros.
 - Botão de mostrar mais
 
+## A fazer
+
+[x] - Listagem de pokemons
+[x] - Botão de mostrar mais
+[x] - Botão de busca
+[x] - Página de detalhes do pokemons
+[] - Mostrar Evoluções do pokemon na página de detalhes
+[] - Melhorar a performance das consultas na API
+[] - Melhorar a performance na rendenrização dos componentes
+
 ## Tecnologias utilizadas
 
 - HTML, CSS e Javascript 
