@@ -4,6 +4,12 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+a, a:visited{
+  color: white;
 }
 
 .content{
@@ -48,15 +54,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 15px;
   flex-wrap: wrap;
   list-style: none;
-  margin: 15px 0;
   gap: 15px;
 }
 
 .pokemon{
   display: flex;
   width: calc((100% / 3) - 15px);
+  color: white;
   flex-direction: column;
   padding: 10px;
   border-radius: 10px;
@@ -66,11 +73,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-image: url("/assets/patterns/pokeball.svg"); */
+  background-image: url("/public/assets/patterns/pokeball.svg");
   background-size: cover;
   background-repeat: no-repeat;
   width: 200px;
-  height: 200px;
   transition: all .5s;
 }
 
@@ -94,7 +100,6 @@
 
 .pokemon .number {
   text-align: right;
-  color: black;
   font-weight: bold;
   font-size: .800rem;
 }
@@ -134,8 +139,8 @@
 }
 
 .button-more{
-  background-color: red;
-  color: white;
+  background-color: #396bba;
+  color: #ffe031;
   border-radius: 10px;
   margin: 0 auto;
   width: 100%;
@@ -143,74 +148,15 @@
   padding: 10px;
 }
 
-.colour-normal {
-  background-color: #A8A77A;
+@media screen and (max-width: 970px) {
+  .pokemon {
+    width: calc((100% / 2) - 10px );
+  }
 }
 
-.colour-fire {
-  background-color: #EE8130;
-}
-
-.colour-water {
-  background-color: #6390F0;
-}
-
-.colour-electric {
-  background-color: #F7D02C;
-}
-
-.colour-grass {
-  background-color: #7AC74C;
-}
-
-.colour-ice {
-  background-color: #96D9D6;
-}
-
-.colour-fighting {
-  background-color: #C22E28;
-}
-
-.colour-poison {
-  background-color: #A33EA1;
-}
-
-.colour-ground {
-  background-color: #E2BF65;
-}
-
-.colour-flying {
-  background-color: #A98FF3;
-}
-
-.colour-psychic {
-  background-color: #F95587;
-}
-
-.colour-bug {
-  background-color: #A6B91A;
-}
-
-.colour-rock {
-  background-color: #B6A136;
-}
-
-.colour-ghost {
-  background-color: #735797;
-}
-
-.colour-dragon {
-  background-color: #6F35FC;
-}
-
-.colour-dark {
-  background-color: #705746;
-}
-
-.colour-steel {
-  background-color: #B7B7CE;
-}
-
-.colour-fairy {
-  background-color: #D685AD;
+@media screen and (max-width: 768px) {
+  .pokemon{
+    width: 100%;
+  }
+  
 }
