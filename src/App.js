@@ -52,7 +52,7 @@ export default function App() {
   return (
     <section className="content">
       <div className="head-page">
-        <img alt="pokedex-title" className="page-title" src="/assets/patterns/pokedex-title.png"></img>
+        <img alt="pokedex-title" className="page-title" src="./assets/patterns/pokedex-title.png"></img>
         <div className="search">
           <input type="text" placeholder="FAAAAAAAAAAAAAAALA ZEZE" onChange={(e => setSearch(e.target.value.toLowerCase().trim()))} />
           <button className="button-search">
@@ -65,7 +65,7 @@ export default function App() {
         ))}
       </ul> : 
       <div className="loading">
-        <img alt="pikachu-running" src="/assets/patterns/pikachu-running.gif" className="empty-list" />
+        <img alt="pikachu-running" src="./assets/patterns/pikachu-running.gif" className="empty-list" />
         <p>Loading...</p>
       </div> }
       

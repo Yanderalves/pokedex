@@ -11,7 +11,7 @@ import "../../colors.css";
 import "../../App.css";
 
 
-const path = '/assets/types/';
+const path = './assets/types/';
 
 export default function Details() {
 
