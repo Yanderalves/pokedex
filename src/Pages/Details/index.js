@@ -29,7 +29,7 @@ export default function Details() {
                 mapperPokemon = {
                     name: data.name,
                     id: data.id,
-                    image: data.sprites.other.dream_world.front_default || data.sprites.other.home.front_default,
+                    image: data.sprites['versions']['generation-v']['black-white']['animated']['front_default'],
                     types: data.types,
                     weight: data.weight,
                     height: data.height,
@@ -49,8 +49,7 @@ export default function Details() {
 
     }, [name]);
 
-        // const type_primary = pokemon.types[0].type.name;
-        const type_primary = pokemon.types ? pokemon.types[0].type.name : null;
+    const type_primary = pokemon.types ? pokemon.types[0].type.name : null;
     
     return(
         <div className="pokemon-details">
@@ -101,24 +100,32 @@ export default function Details() {
                     <h2>Stats</h2>
                     <ul className="pokemon-stats">
                         <li className="pokemon-stat">
-                            <span>HP</span>
-                            <span>{pokemon.hp}</span>
-                            <span className="container-bar"><span style={{width: `${Number(pokemon.hp)}%`}} className="bar"></span></span>
+                            <div className="label-stat">
+                                <span>HP</span>
+                                <span>{pokemon.hp}</span>
+                            </div>
+                            <span className="container-bar"><span style={{ width: `${Number(pokemon.hp)}%` }} className={`bar colour-${type_primary}`}></span></span>
                         </li>
                         <li className="pokemon-stat">
-                            <span>ATK</span>
-                            <span>{pokemon.attack}</span>
-                            <span className="container-bar"><span style={{ width: `${Number(pokemon.attack)}%` }} className="bar"></span></span>
+                            <div class="label-stat">
+                                <span>ATK</span>
+                                <span>{pokemon.attack}</span>
+                            </div>
+                            <span className="container-bar"><span style={{ width: `${Number(pokemon.attack)}%` }} className={`bar colour-${type_primary}`}></span></span>
                         </li>
                         <li className="pokemon-stat">
-                            <span>DEF</span>
-                            <span>{pokemon.defense}</span>
-                            <span className="container-bar"><span style={{ width: `${Number(pokemon.defense)}%` }} className="bar"></span></span>
+                            <div class="label-stat">
+                                <span>DEF</span>
+                                <span>{pokemon.defense}</span>
+                            </div>
+                            <span className="container-bar"><span style={{ width: `${Number(pokemon.defense)}%` }} className={`bar colour-${type_primary}`}></span></span>
                         </li>
                         <li className="pokemon-stat">
-                            <span>SPD</span>
-                            <span>{pokemon.speed}</span>
-                            <span className="container-bar"><span style={{ width: `${Number(pokemon.speed)}%` }} className="bar"></span></span>
+                            <div class="label-stat">
+                                <span>SPD</span>
+                                <span>{pokemon.speed}</span>
+                            </div>
+                            <span className="container-bar"><span style={{ width: `${Number(pokemon.speed)}%` }} className={`bar colour-${type_primary}`}></span></span>
                         </li>
                     </ul>
                 </div>

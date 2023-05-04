@@ -1,13 +1,10 @@
-body{
-    overflow: hidden;
-}
 
 .pokemon-details{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 470px;
     width: 100%;
+    max-width: 450px;
     margin: 10px auto;
     border-radius: 10px;
     height: 100vh;
@@ -52,6 +49,7 @@ body{
     box-shadow: -1px 1px 13px 0px black;
     border-radius: 10px;
     padding: 10px 0px 25px 0;
+    height: 350px;
 }
 
 .pokemon-types{
@@ -133,44 +131,39 @@ body{
     font-size: 15px;
 }
 
+
 .pokemon-stats{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     width: 100%;
-    margin: 0 auto;
-    margin-top: 15px;
-    gap: 25px;
 }
 
-.pokemon-stats span:nth-child(2){
-    width: 20px;
+.label-stat{
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
 }
 
 .pokemon-stats .pokemon-stat{
     display: flex;
-    width: 100%;
     align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    width: 500px;
-    gap: 25px;
+    gap: 15px;
+    justify-content: space-between;
+
 }
 
 .pokemon-stats .pokemon-stat span:first-of-type{
-    width: 57px;
-    border-right: 1px solid rgba(0, 0, 0, 0.444);
+    text-align: left;
 }
 
 .pokemon-stats .pokemon-stat .bar, .container-bar{
     width: 14rem;
     display: block;
     height: 5px;
-    background-color: black;
     border-radius: 5px;
+    flex-grow: 1;
 }
 
 .container-bar{
-    background-color: gray !important;
+    background-color: rgba(0, 0, 0, 0.405);
 }
