@@ -73,7 +73,7 @@ a, a:visited{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("/assets/patterns/pokeball.svg");
+  background-image: url("./assets/patterns/pokeball.svg");
   background-size: cover;
   background-repeat: no-repeat;
   transition: all .5s;

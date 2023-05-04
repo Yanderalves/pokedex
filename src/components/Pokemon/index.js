@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import { Link } from "react-router-dom";
 
-const path = '/assets/types/';
+const path = './assets/types/';
 
 function Pokemon(props) {
     const typePrimary = props.pokemon.types[0].type.name;
