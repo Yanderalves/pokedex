@@ -9,11 +9,9 @@ import Details from './Pages/Details';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <HashRouter>
-    <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/pokemon/:name" element={<Details />} />
       </Routes>
-    </BrowserRouter>
   </HashRouter>
 );
