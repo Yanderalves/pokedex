@@ -20,13 +20,14 @@ Para executar, execute os seguintes comenados na pasta do projeto
 
 ## A fazer
 
-[x] - Listagem de pokemons
-[x] - Botão de mostrar mais
-[x] - Botão de busca
-[x] - Página de detalhes do pokemons
-[] - Mostrar Evoluções do pokemon na página de detalhes
-[] - Melhorar a performance das consultas na API
-[] - Melhorar a performance na rendenrização dos componentes
+- [x] Listagem de pokemons
+- [x] - Botão de mostrar mais
+- [x] - Botão de busca
+- [x] - Página de detalhes do pokemons
+- [ ] - Mostrar Evoluções do pokemon na página de detalhes
+- [ ] - Melhorar a performance das consultas na API
+- [ ] - Melhorar a performance na rendenrização dos componentes
+
 
 ## Tecnologias utilizadas
 
