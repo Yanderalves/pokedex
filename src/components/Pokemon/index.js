@@ -1,9 +1,9 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 
 const path = '/assets/types/';
 
-export default function Pokemon(props) {
+function Pokemon(props) {
     const typePrimary = props.pokemon.types[0].type.name;
     return (
         <Link to={`/pokemon/${props.pokemon.name}`} className={`pokemon colour-${typePrimary}`}>
@@ -26,3 +26,5 @@ export default function Pokemon(props) {
         </Link>
     )
 }
+
+export default memo(Pokemon);
