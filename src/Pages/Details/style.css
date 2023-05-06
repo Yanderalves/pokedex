@@ -28,7 +28,7 @@
 
 
 .details-header .pokemon-image{
-    width: 100%;
+    width: 80%;
 }
 
 .container-image-details{
@@ -36,7 +36,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 150px;
+    width: 250px;
+    height: 250px;
+    background-image: url("/assets/patterns/pokeball.svg");
+    background-size: cover;
+    background-position: center;
 }
 
 

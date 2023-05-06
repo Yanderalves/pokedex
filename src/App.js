@@ -4,6 +4,9 @@ import Pokemon from "./components/Pokemon";
 import axios from "axios";
 import './App.css'
 import "./colors.css";
+import Loading from "./components/Loading";
+
+const TOTAL_POKEMON_API = 1281;
 
 
 export default function App() {
@@ -11,16 +14,16 @@ export default function App() {
   const [pokemons, setPokemons] = useState([]);
   const [search, setSearch] = useState("");
   const [pokemonsFiltered, setPokemonsFiltered] = useState([]);
-  const [displayCount, setDisplayCount] = useState(21);
+  const [displayCount, setDisplayCount] = useState(9);
 
   useEffect(() => {
     api
-      .get(`/pokemon?limit=1281&offset=0`)
+      .get(`/pokemon?limit=${displayCount}&offset=0`)
       .then((response) => setEndpoints(response.data.results))
       .catch((err) => {
         console.error("ops! ocorreu um erro" + err);
       });
-  }, []);
+  }, [displayCount]);
 
   useEffect(() => {
     const pokemonRequests = endpoints.map(endpoint =>
@@ -41,8 +44,8 @@ export default function App() {
   }, [search, pokemons])
 
   const mapperPokemon = (pokemon) => {
-    return{
-      name:  pokemon.name,
+    return {
+      name: pokemon.name,
       id: pokemon.id,
       image: pokemon['sprites']['other']['official-artwork']['front_default'] || pokemon.sprites.other.dream_world.front_default,
       types: pokemon.types,
@@ -59,17 +62,14 @@ export default function App() {
           </button>
         </div>
       </div>
-      {pokemonsFiltered &&  pokemonsFiltered.length > 0 ? <ul className="pokemons"  >
+      {pokemonsFiltered && pokemonsFiltered.length > 0 ? <ul className="pokemons"  >
         {pokemonsFiltered.slice(0, displayCount).map((pokemon) => (
           < Pokemon key={pokemon.id} pokemon={mapperPokemon(pokemon)} />
         ))}
-      </ul> : 
-      <div className="loading">
-        <img alt="pikachu-running" src="./assets/patterns/pikachu-running.gif" className="empty-list" />
-        <p>Loading...</p>
-      </div> }
-      
-      {displayCount < pokemonsFiltered.length &&
+      </ul> :
+        <Loading />}
+
+      {((displayCount < TOTAL_POKEMON_API) && pokemonsFiltered.length > 0) &&
         <button className="button-more" onClick={(e) => setDisplayCount(displayCount + 21)}>Mostrar mais</button>
       }
     </section>

@@ -5,11 +5,12 @@ import { GiWeight } from "react-icons/gi";
 import { CiLineHeight } from "react-icons/ci";
 import { BiArrowBack } from "react-icons/bi";
 import { Link } from "react-router-dom";
+
+import mapperPokemon from "../../Mapper";
  
 import "./style.css";
 import "../../colors.css";
 import "../../App.css";
-
 
 const path = './assets/types/';
 
@@ -18,42 +19,24 @@ export default function Details() {
     const {name} = useParams();
 
     const [pokemon, setPokemon] = useState({});
-    let mapperPokemon;
-
 
     useEffect(() => {
         api
             .get(`/pokemon/${name}`)
             .then((response) => (response.data))
             .then((data) => {
-                mapperPokemon = {
-                    name: data.name,
-                    id: data.id,
-                    image: data.sprites['versions']['generation-v']['black-white']['animated']['front_default'],
-                    types: data.types,
-                    weight: data.weight,
-                    height: data.height,
-                    moves: data.moves,
-                    hp: data.stats[0].base_stat,
-                    attack: data.stats[1].base_stat,
-                    defense: data.stats[2].base_stat,
-                    speed: data.stats[5].base_stat
-                }
-
-                setPokemon(mapperPokemon);
-
+                const mapperPokemonDetails = mapperPokemon(data);
+                setPokemon(mapperPokemonDetails);
             })
             .catch((err) => {
                 console.error("ops! ocorreu um erro" + err);
             });
 
     }, [name]);
-
-    const type_primary = pokemon.types ? pokemon.types[0].type.name : null;
     
     return(
         <div className="pokemon-details">
-            <div className={`details-header colour-${type_primary}`}>
+            <div className={`details-header colour-${pokemon.type_primary}`}>
                 <div className="details-header-head">
                     <Link to="/">
                         <BiArrowBack size={35} />
@@ -104,28 +87,28 @@ export default function Details() {
                                 <span>HP</span>
                                 <span>{pokemon.hp}</span>
                             </div>
-                            <span className="container-bar"><span style={{ width: `${Number(pokemon.hp)}%` }} className={`bar colour-${type_primary}`}></span></span>
+                            <span className="container-bar"><span style={{ width: `${Number(pokemon.hp)}%` }} className={`bar colour-${pokemon.type_primary}`}></span></span>
                         </li>
                         <li className="pokemon-stat">
                             <div class="label-stat">
                                 <span>ATK</span>
                                 <span>{pokemon.attack}</span>
                             </div>
-                            <span className="container-bar"><span style={{ width: `${Number(pokemon.attack)}%` }} className={`bar colour-${type_primary}`}></span></span>
+                            <span className="container-bar"><span style={{ width: `${Number(pokemon.attack)}%` }} className={`bar colour-${pokemon.type_primary}`}></span></span>
                         </li>
                         <li className="pokemon-stat">
                             <div class="label-stat">
                                 <span>DEF</span>
                                 <span>{pokemon.defense}</span>
                             </div>
-                            <span className="container-bar"><span style={{ width: `${Number(pokemon.defense)}%` }} className={`bar colour-${type_primary}`}></span></span>
+                            <span className="container-bar"><span style={{ width: `${Number(pokemon.defense)}%` }} className={`bar colour-${pokemon.type_primary}`}></span></span>
                         </li>
                         <li className="pokemon-stat">
                             <div class="label-stat">
                                 <span>SPD</span>
                                 <span>{pokemon.speed}</span>
                             </div>
-                            <span className="container-bar"><span style={{ width: `${Number(pokemon.speed)}%` }} className={`bar colour-${type_primary}`}></span></span>
+                            <span className="container-bar"><span style={{ width: `${Number(pokemon.speed)}%` }} className={`bar colour-${pokemon.type_primary}`}></span></span>
                         </li>
                     </ul>
                 </div>

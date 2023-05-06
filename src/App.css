@@ -8,11 +8,12 @@
   text-decoration: none;
 }
 
-a, a:visited{
+a,
+a:visited {
   color: white;
 }
 
-.content{
+.content {
   display: flex;
   flex-direction: column;
   max-width: 1240px;
@@ -22,35 +23,35 @@ a, a:visited{
   margin: 15px auto;
 }
 
-.page-title{
+.page-title {
   width: 200px;
 }
 
-.content .head-page{
+.content .head-page {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.content .head-page .search{
+.content .head-page .search {
   width: 50%;
   display: flex;
   align-items: center;
 }
 
-.content .head-page input{
+.content .head-page input {
   width: 100%;
   padding: 10px;
   border-radius: 10px;
   font-size: 15px;
 }
 
-.name{
+.name {
   text-transform: uppercase;
 }
 
-.pokemons{
+.pokemons {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,7 +61,7 @@ a, a:visited{
   gap: 15px;
 }
 
-.pokemon{
+.pokemon {
   display: flex;
   width: calc((100% / 3) - 15px);
   color: white;
@@ -69,7 +70,7 @@ a, a:visited{
   border-radius: 10px;
 }
 
-.container-image{
+.container-image {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,7 +80,7 @@ a, a:visited{
   transition: all .5s;
 }
 
-.pokemon:hover .image{
+.pokemon:hover .image {
   filter: none;
   transform: scale(1.1);
 }
@@ -108,7 +109,7 @@ a, a:visited{
   list-style: none;
 }
 
-.pokemon .details .types .type:first-of-type{
+.pokemon .details .types .type:first-of-type {
   filter: saturate(2);
 }
 
@@ -124,7 +125,7 @@ a, a:visited{
   gap: 5px;
 }
 
-.pokemon .details .types .type img{
+.pokemon .details .types .type img {
   width: 20px;
   filter: brightness(100);
 }
@@ -137,7 +138,7 @@ a, a:visited{
   justify-content: space-between;
 }
 
-.button-more{
+.button-more {
   background-color: #396bba;
   color: #ffe031;
   border-radius: 10px;
@@ -145,6 +146,7 @@ a, a:visited{
   width: 100%;
   border: none;
   padding: 10px;
+  cursor: pointer;
 }
 
 .loading {
@@ -169,12 +171,12 @@ a, a:visited{
 
 @media screen and (max-width: 970px) {
   .pokemon {
-    width: calc((100% / 2) - 10px );
+    width: calc((100% / 2) - 10px);
   }
 }
 
 @media screen and (max-width: 768px) {
-  .pokemon{
+  .pokemon {
     width: 100%;
-  }  
+  }
 }
